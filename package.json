@@ -1,0 +1,29 @@
+{
+  "name": "coffee-learn",
+  "version": "0.0.0",
+  "description": "machine learning library in coffee-script",
+  "main": "lib/cflearn.coffee",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:k-fujikawa/coffee-learn.git"
+  },
+  "keywords": [
+    "machine-learning"
+  ],
+  "author": "kazuki.fujikawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k-fujikawa/coffee-learn/issues"
+  },
+  "homepage": "https://github.com/k-fujikawa/coffee-learn",
+  "scripts": {
+    "test": "./node_modules/nodeunit/bin/nodeunit test"
+  },
+  "dependencies": {
+    "coffee-script": "1.8.0",
+    "nodeunit": "0.7.4"
+  }
+}
