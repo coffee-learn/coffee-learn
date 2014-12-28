@@ -1,4 +1,5 @@
 {Matrix} = require '../../math/matrix'
+{Matrix} = require 'logistic_regression'
 
 
 module.exports.MLP = class MLP
@@ -22,25 +23,5 @@ module.exports.MLP = class MLP
     for layer in @layers
       n_in = layer.fprop(n_in)
     return n_in
-
-module.exports.Sigmoid = class Sigmoid
-  constructor: (layer_name, dim) ->
-    @layer_name = layer_name
-    @dim = dim
-  w: ->
-    return @w
-  dim: ->
-    return @dim
-  setup: (n_in=0) ->
-    @w = Matrix.zeros(n_in, @dim, fill=1.0)
-  fprop: (n_in) ->
-    return @sigmoid(Matrix.dot(n_in, @w).matrix)
-  classify: (n_in) ->
-    if @fprop(n_in) >= 0.5
-      return 1
-    else
-      return 0
-  sigmoid: (x) ->
-    return 1 / (1 + Math.exp(-x))
 
 

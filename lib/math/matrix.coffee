@@ -1,31 +1,32 @@
 module.exports.Matrix = class Matrix
   constructor: (array) ->
     @matrix = array
-    @row = array.length
-    @col = array[0].length
+    # @row = array.length
+    # @col = array[0].length
 
   matrix: ->
     return @matrix
 
   row: ->
-    return @row
+    return @matrix.length
 
   col: ->
-    return @col
+    return @matrix[0].length
+
   T: ->
     t_matrix = []
-    for col in [0 ... @col]
+    for col in [0 ... @col()]
       array = []
-      for row in [0 ... @row]
+      for row in [0 ... @row()]
         array.push @matrix[row][col]
       t_matrix.push array
     return new Matrix(t_matrix)
 
   inv: ->
-    if (@col != @row)
+    if (@col() != @row())
       throw new Error('matrix dimensions are not valid')
     M = JSON.parse(JSON.stringify(@matrix))
-    N = @row
+    N = @row()
     for row in [0 ... N]
       for col in [0 ... N]
         if col == row
@@ -60,7 +61,7 @@ module.exports.Matrix = class Matrix
       matrix.push array
     return new Matrix(matrix)
 
-  @E: (n=2, fill=1) ->
+  @identify: (n=2, fill=1) ->
     E = Matrix.zeros(n, n)
     for row in [0 ... E.row]
       for col in [0 ... E.col]
@@ -68,35 +69,35 @@ module.exports.Matrix = class Matrix
     return E
 
   @add: (matrix_A, matrix_B) ->
-    if (matrix_A.row != matrix_B.row) or (matrix_A.col != matrix_B.col)
+    if (matrix_A.row() != matrix_B.row()) or (matrix_A.col() != matrix_B.col())
       throw new Error('matrix dimensions are not valid')
     answer = []
-    for row in [0 ... matrix_A.row]
+    for row in [0 ... matrix_A.row()]
       answer.push []
-      for col in [0 ... matrix_B.col]
+      for col in [0 ... matrix_B.col()]
         answer[row][col] = matrix_A.matrix[row][col] + matrix_B.matrix[row][col]
     return new Matrix(answer)
 
   @sub: (matrix_A, matrix_B) ->
-    if (matrix_A.row != matrix_B.row) or (matrix_A.col != matrix_B.col)
+    if (matrix_A.row() != matrix_B.row()) or (matrix_A.col() != matrix_B.col())
       throw new Error('matrix dimensions are not valid')
     answer = []
-    for row in [0 ... matrix_A.row]
+    for row in [0 ... matrix_A.row()]
       answer.push []
-      for col in [0 ... matrix_B.col]
+      for col in [0 ... matrix_B.col()]
         answer[row][col] = matrix_A.matrix[row][col] - matrix_B.matrix[row][col]
     return new Matrix(answer)
 
 
   @dot: (matrix_A, matrix_B) ->
-    if (matrix_A.col != matrix_B.row)
+    if (matrix_A.col() != matrix_B.row())
       throw new Error('matrix dimensions are not valid')
     answer = []
-    for row in [0 ... matrix_A.row]
+    for row in [0 ... matrix_A.row()]
       array = []
-      for col in [0 ... matrix_B.col]
+      for col in [0 ... matrix_B.col()]
         sum = 0.0
-        for i in [0 ... matrix_A.col]
+        for i in [0 ... matrix_A.col()]
           sum += matrix_A.matrix[row][i] * matrix_B.matrix[i][col]
         array.push sum
       answer.push array

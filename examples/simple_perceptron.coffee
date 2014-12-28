@@ -1,14 +1,19 @@
-{MLP, Sigmoid, Step} = require '../lib/models/neuralnetwork/mlp'
-# {Train} = require '../lib/train/train'
-{IRLS} = require '../lib/train/irls'
-{XOR} = require '../datasets/XOR'
+# Logistic regression to classify XOR
 
-dataset = XOR
-model = new Sigmoid(layer_name='output', dim=1)
-model.setup(n_in = dataset['x'][0].length)
-# trainer = new Train(dataset, model, new IRLS(0.1))
-trainer = new IRLS(dataset, model)
-trainer.train(1)
+## import Libraries
+{LogisticRegression, Sigmoid} = require '../lib/models/neuralnetwork/logistic_regression'
+{IRLS} = require '../lib/train/irls'
+{OR, XOR} = require '../datasets/logical_operation'
+
+## Setting for Simple Perceptron
+dataset = OR
+layer = new Sigmoid(layer_name='output', dim=1, basis_function='gaussian')
+model = new LogisticRegression(layer=layer, is_classify=true)
+
+## Training
+trainer = new IRLS(dataset, model, use_bias=true)
+N = 10
 trainer.validate()
-# mlp = new cflearn.NeuralNetwork.MLP(1,2)
-# console.log mlp
+for n in [0 ... N]
+  trainer.train()
+  trainer.validate()
