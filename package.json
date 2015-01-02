@@ -1,6 +1,6 @@
 {
-  "name": "coffee-learn",
-  "version": "0.0.0",
+  "name": "cflearn",
+  "version": "0.0.1",
   "description": "machine learning library in coffee-script",
   "main": "lib/cflearn.coffee",
   "directories": {

@@ -1,6 +1,4 @@
 {Matrix} = require '../../math/matrix'
-{Matrix} = require 'logistic_regression'
-
 
 module.exports.MLP = class MLP
   constructor: (layers, nvis) ->

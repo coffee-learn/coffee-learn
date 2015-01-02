@@ -1,8 +1,7 @@
+# module.exports.Matrix = class Matrix
 module.exports.Matrix = class Matrix
   constructor: (array) ->
     @matrix = array
-    # @row = array.length
-    # @col = array[0].length
 
   matrix: ->
     return @matrix
@@ -105,3 +104,5 @@ module.exports.Matrix = class Matrix
 
   @get_obj_type: (obj) ->
     return {}.toString.call(obj)
+
+
