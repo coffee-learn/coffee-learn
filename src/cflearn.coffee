@@ -11,3 +11,4 @@ cflearn.Models   = Models
 cflearn.Train    = Train
 cflearn.Datasets = Datasets
 
+global.cflearn = cflearn

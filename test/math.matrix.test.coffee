@@ -1,5 +1,5 @@
 
-{Matrix} = require '../lib/math/matrix'
+{Matrix} = require '../src/math/matrix'
 
 module.exports =
   "zeros": (test) ->
@@ -47,3 +47,12 @@ module.exports =
     ]
     test.ok Matrix.add(new Matrix(A), new Matrix(B)).matrix.toString() == A_B.toString()
     test.done()
+
+  "norm": (test) ->
+    A = [
+      [1, 2, 3]
+    ]
+    A_norm = Math.sqrt(1 + 4 + 9)
+    test.ok Matrix.norm(new Matrix(A)) == A_norm
+    test.done()
+

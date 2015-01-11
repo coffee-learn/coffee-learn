@@ -8,11 +8,16 @@ module.exports.LogisticRegression = class LogisticRegression
     return @layer
 
   setup: (@nvis) ->
-    console.log 'setup'
     @layer.setup(n_in=@nvis)
 
-  fprop: (n_in) ->
-    return @layer.fprop(n_in)
+  getParams: ->
+    return w: [@layer.w.matrix], dim: [@nvis, @layer.dim]
+
+  fprop: (n_in, detail=false) ->
+    if detail
+      return [n_in.matrix[0], [@layer.fprop(n_in)]]
+    else
+      return @layer.fprop(n_in)
 
   predict: (n_in) ->
     if @is_classify

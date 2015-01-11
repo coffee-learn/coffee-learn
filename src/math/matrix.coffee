@@ -1,4 +1,3 @@
-# module.exports.Matrix = class Matrix
 module.exports.Matrix = class Matrix
   constructor: (array) ->
     @matrix = array
@@ -49,7 +48,6 @@ module.exports.Matrix = class Matrix
     for row in M
       INV.push row[N .. 2 * N]
     return new Matrix(INV)
-
 
   @zeros: (row, col, fill=0) ->
     matrix = []
@@ -102,7 +100,10 @@ module.exports.Matrix = class Matrix
       answer.push array
     return new Matrix(answer)
 
-  @get_obj_type: (obj) ->
-    return {}.toString.call(obj)
-
+  @norm: (matrix) ->
+    square = 0
+    for row in matrix.matrix
+      for col in row
+        square += col * col
+    return Math.sqrt(square)
 
