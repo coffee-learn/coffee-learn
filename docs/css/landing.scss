@@ -1,0 +1,30 @@
+---
+---
+
+
+@import "coffee-learn-core";
+
+.header {
+    background-image:        url('/img/coffee.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size:    cover;
+    -o-background-size:      cover;
+    background-size:         cover;
+    height:                  300px;
+    text-align:              center;
+    color:                   white;
+
+    h1 {
+        font-family: $font-family-brand;
+        margin-top:  0px;
+        padding:     50px 0px 20px;
+    }
+}
+
+.btn-download {
+    margin: 20px;
+}
+.version {
+    color: $lightbrown;
+    font-size: 12px;
+}

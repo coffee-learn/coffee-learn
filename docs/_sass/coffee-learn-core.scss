@@ -1,0 +1,118 @@
+// setting for variables
+// colors
+$lightbrown: #DEDBCC;
+$brown:      #BC8339;
+$darkbrown:  #453015;
+
+// base
+$font-family-base:  'Raleway', sans-serif;
+$font-family-brand: 'Lobster', cursive;
+$text-color:        $darkbrown;
+$link-color:        $brown;
+// navbar
+$navbar-default-bg:          $lightbrown;
+$navbar-border-radius:       0;
+$navbar-default-brand-color: $brown;
+
+// button
+$btn-default-bg:     $darkbrown;
+$btn-default-color:  $lightbrown;
+$btn-default-border: black;
+
+@import "bootstrap";
+
+.navbar-brand {
+    font-family: $font-family-brand;
+}
+.navbar-brand {
+    font-size: 26px;
+}
+
+body {
+    padding-top: $navbar-height;
+}
+
+footer {
+    padding:          40px 0px 80px;
+    margin-top:       50px;
+    color:            $lightbrown;
+    text-align:       center;
+    background-color: $darkbrown;
+}
+
+h1 {
+    font-family:   'Slabo 27px', serif;
+    font-weight:   bold;
+}
+
+.documentation > h1 {
+    border-bottom: 1px solid #eee;
+
+}
+h2 {
+    font-family: 'Slabo 27px', serif;
+}
+
+.documentation > table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $line-height-computed;
+    // Cells
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+        > th,
+        > td {
+            padding: $table-cell-padding;
+            line-height: $line-height-base;
+            vertical-align: top;
+            border-top: 1px solid $table-border-color;
+        }
+        }
+    }
+    // Bottom align for column headings
+    > thead > tr > th {
+        vertical-align: bottom;
+        border-bottom: 2px solid $table-border-color;
+    }
+    // Remove top border from thead by default
+    > caption + thead,
+    > colgroup + thead,
+    > thead:first-child {
+        > tr:first-child {
+        > th,
+        > td {
+            border-top: 0;
+        }
+        }
+    }
+    // Account for multiple tbody instances
+    > tbody + tbody {
+        border-top: 2px solid $table-border-color;
+    }
+
+    border: 1px solid $table-border-color;
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+        > th,
+        > td {
+            border: 1px solid $table-border-color;
+        }
+        }
+    }
+    > thead > tr {
+        > th,
+        > td {
+        // border-bottom-width: 2px;
+        }
+    }
+
+
+    // Nesting
+    .table {
+        background-color: $body-bg;
+    }
+}
