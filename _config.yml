@@ -5,23 +5,21 @@ markdown:         redcarpet
 permalink:        pretty
 
 # Server
-source:           docs
 destination:      docs/_site
 plugins:          docs/_plugins
 layouts:          docs/_layouts
-data_source:      docs/_data
 collections:      null
 
-host:             0.0.0.0
-port:             4000
 encoding:         UTF-8
 
 # sass
 sass:
-    sass_dif:    docs/_sass
-    style:       :compressed
+    sass_dir:     docs/_sass
+    style:        :compressed
 
 # Custom vars
 current_version:  0.1.0
 repo:             https://github.com/coffee-learn/coffee-learn
+
+baseurl:          /coffee-learn
 

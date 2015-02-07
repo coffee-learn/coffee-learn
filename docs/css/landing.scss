@@ -5,7 +5,7 @@
 @import "coffee-learn-core";
 
 .header {
-    background-image:        url('/img/coffee.jpg');
+    background-image:        url("{{ "/docs/img/coffee.jpg" | prepend: site.baseurl }}");
     -webkit-background-size: cover;
     -moz-background-size:    cover;
     -o-background-size:      cover;
