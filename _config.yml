@@ -1,8 +1,5 @@
 # Dependencies
-highlighter:      rouge
 markdown:         redcarpet
-redcarpet:
-    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
 # Permalinks
 permalink:        pretty
@@ -21,6 +18,7 @@ encoding:         UTF-8
 
 # sass
 sass:
+    sass_dif:    docs/_sass
     style:       :compressed
 
 # Custom vars
