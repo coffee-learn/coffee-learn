@@ -1,7 +1,7 @@
 cflearn        = {}
 module.exports = cflearn
 
-Math     = require './math/math'
+Math     = require './math/matrix'
 Models   = require './models/models'
 Train    = require './train/train'
 Datasets = require './datasets/datasets'
