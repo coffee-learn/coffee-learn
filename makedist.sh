@@ -1,2 +1,2 @@
 coffee -co lib src
-browserify lib/cflearn.js | uglifyjs > dist/cflearn.min.js
+browserify lib/cflearn.js | uglifyjs > cflearn.min.js
